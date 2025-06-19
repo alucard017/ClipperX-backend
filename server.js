@@ -17,7 +17,7 @@ const FFMPEG_PATH = "ffmpeg"; // use command name
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000", "https://clipper-x-mu.vercel.app"],
     methods: ["GET", "POST"],
     credentials: true,
   })
