@@ -17,7 +17,11 @@ const FFMPEG_PATH = "ffmpeg"; // use command name
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://clipper-x-mu.vercel.app"],
+    origin: [
+      "http://localhost:3000",
+      "https://clipper-x-mu.vercel.app",
+      "http://127.0.0.1:5500",
+    ],
     methods: ["GET", "POST"],
     credentials: true,
   })
@@ -96,7 +100,7 @@ app.post("/clip", async (req, res) => {
         if (err) console.error("Failed to delete:", clippedFile);
         else console.log("Deleted:", clippedFile);
       });
-    }, 30_000);
+    }, 120_000);
 
     // === Step 5: Respond with download link ===
     return res.status(200).json({
